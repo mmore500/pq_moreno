@@ -261,6 +261,8 @@ public class PriorityQueue {
 	 */
 	private int percolateUpLeaf(){
 		// TODO: A one-line function that calls percolateUp()
+		new UnsupportedOperationException("percolateUpLeaf not yet implemented.");
+		return -1;
 	}
 
 	/**
