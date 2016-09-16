@@ -153,6 +153,8 @@ public class PriorityQueue {
 	 */
 	public int size() {
 		// TODO: Fill in
+		new UnsupportedOperationException("size not yet implemented.");
+		return -1;
 	}
 
 
