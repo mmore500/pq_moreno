@@ -6,9 +6,9 @@ import java.util.Map;
 /**
  * A priority queue class implemented using a max heap.
  * Priorities cannot be negative.
- * 
- * @author Your names
- * @version Date
+ *
+ * @author Matthew Moreno
+ * @version September 16th, 2016
  *
  */
 public class PriorityQueue {
@@ -35,7 +35,7 @@ public class PriorityQueue {
 	 *	<li> The element does not already appear in the priority queue.</li>
 	 *	<li> The priority is non-negative.</li>
 	 *	</ul>
-	 *  
+	 *
 	 */
 	public void push(int priority, int element) {
 		// TODO: Fill in
@@ -43,12 +43,12 @@ public class PriorityQueue {
 
 	/**
 	 *  Remove the highest priority element
-	 *  
+	 *
 	 *	<dt><b>Preconditions:</b><dd>
 	 *	<ul>
 	 *	<li> The priority queue is non-empty.</li>
 	 *	</ul>
-	 *  
+	 *
 	 */
 	public void pop(){
 		// TODO: Fill in
@@ -58,13 +58,13 @@ public class PriorityQueue {
 	/**
 	 *  Returns the highest priority in the queue
 	 *  @return highest priority value
-	 *  
+	 *
 	 *	<dt><b>Preconditions:</b><dd>
 	 *	<ul>
 	 *	<li> The priority queue is non-empty.</li>
 	 *	</ul>
 	 */
-	public int topPriority() {		
+	public int topPriority() {
 		// TODO: Fill in
 	}
 
@@ -86,10 +86,10 @@ public class PriorityQueue {
 	/**
 	 *  Change the priority of an element already in the
 	 *  priority queue.
-	 *  
+	 *
 	 *  @param element element whose priority is to be changed
 	 *  @param newpriority the new priority
-	 *  
+	 *
 	 *	<dt><b>Preconditions:</b><dd>
 	 *	<ul>
 	 *	<li> The element exists in the priority queue</li>
@@ -102,7 +102,7 @@ public class PriorityQueue {
 
 	/**
 	 *  Gets the priority of the element
-	 *  
+	 *
 	 *  @param element the element whose priority is returned
 	 *  @return the priority value
 	 *
@@ -147,18 +147,18 @@ public class PriorityQueue {
 	}
 
 
-	
+
 	/*********************************************************
 	 * 				Private helper methods
 	 *********************************************************/
-	
+
 
 	/**
-	 * Push down a given element 
+	 * Push down a given element
 	 * @param start_index the index of the element to be pushed down
 	 * @return the index in the list where the element is finally stored
 	 */
-	private int pushDown(int start_index) {	
+	private int pushDown(int start_index) {
 		// TODO: Fill in
 	}
 
@@ -209,13 +209,13 @@ public class PriorityQueue {
 	private int parent(int child) {
 		// TODO: Fill in
 	}
-	
+
 
 	/*********************************************************
 	 * 	These are optional private methods that may be useful
 	 *********************************************************/
-	
-	
+
+
 	/**
 	 * Push down the root element
 	 * @return the index in the list where the element is finally stored
@@ -225,15 +225,15 @@ public class PriorityQueue {
 	}
 
 	/**
-	 * Percolate up the last leaf in the heap, i.e. the most recently 
+	 * Percolate up the last leaf in the heap, i.e. the most recently
 	 * added element which is stored in the last slot in the list
-	 * 
+	 *
 	 * @return the index in the list where the element is finally stored
 	 */
 	private int percolateUpLeaf(){
 		// TODO: A one-line function that calls percolateUp()
 	}
-	
+
 	/**
 	 * Returns true if element is a leaf in the heap
 	 * @param i index of element in heap
@@ -251,7 +251,7 @@ public class PriorityQueue {
 	private boolean hasTwoChildren(int i) {
 		// TODO: Fill in
 	}
-	
+
 	/**
 	 * Print the underlying list representation
 	 */
@@ -266,5 +266,5 @@ public class PriorityQueue {
 		// TODO: Fill in
 	}
 
-	
+
 }
