@@ -20,7 +20,7 @@ public class PriorityQueue {
 	 *  Constructs an empty priority queue
 	 */
 	public PriorityQueue() {
-		this.map = new HashMap<Integer,Integer>();
+		this.location = new HashMap<Integer,Integer>();
 		this.heap = new ArrayList<Pair<Integer,Integer>>();
 	}
 
