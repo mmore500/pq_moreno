@@ -116,6 +116,8 @@ public class PriorityQueue {
 	 */
 	public int getPriority(int element) {
 		// TODO: Fill in
+		new UnsupportedOperationException("getPriority not yet implemented.");
+		return -1;
 	}
 
 	/**
