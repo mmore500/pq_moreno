@@ -249,6 +249,8 @@ public class PriorityQueue {
 	 */
 	private int pushDownRoot() {
 		// TODO: A one-line function that calls pushDown()
+		new UnsupportedOperationException("pushDownRoot not yet implemented.");
+		return -1;
 	}
 
 	/**
