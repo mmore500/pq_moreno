@@ -20,7 +20,7 @@ public class PriorityQueue {
 	 *  Constructs an empty priority queue
 	 */
 	public PriorityQueue() {
-		// TODO: Fill in
+		this.heap = new ArrayList<Pair<Integer,Integer>>();
 	}
 
 	/**
