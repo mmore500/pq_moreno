@@ -141,7 +141,7 @@ public class PriorityQueue {
 	 *  @return true if the queue contains no elements, false otherwise
 	 */
 	public boolean isEmpty() {
-		// TODO: Fill in
+		return this.size() == 0;
 	}
 
 	/**
