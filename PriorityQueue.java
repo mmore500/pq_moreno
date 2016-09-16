@@ -271,7 +271,7 @@ public class PriorityQueue {
 	 * @return true if element is a leaf
 	 */
 	private boolean isLeaf(int i){
-		// TODO: Fill in
+		return this.left(i) >= this.size();
 	}
 
 	/**
