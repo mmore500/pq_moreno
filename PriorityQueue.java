@@ -166,9 +166,7 @@ public class PriorityQueue {
 	 *  @return number of elements in the priority queue
 	 */
 	public int size() {
-		// TODO: Fill in
-		new UnsupportedOperationException("size not yet implemented.");
-		return -1;
+		return this.heap.size();
 	}
 
 
