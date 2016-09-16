@@ -212,7 +212,7 @@ public class PriorityQueue {
 	 * @return index of element's right child in list
 	 */
 	private int right(int parent) {
-		// TODO: Fill in
+		return 2 * parent + 2;
 	}
 
 	/**
