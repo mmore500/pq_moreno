@@ -136,6 +136,8 @@ public class PriorityQueue {
 	 */
 	public boolean isPresent(int element) {
 		// TODO: Fill in
+		new UnsupportedOperationException("isPresent not yet implemented.");
+		return false;
 	}
 
 	/**
