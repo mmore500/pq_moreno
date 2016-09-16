@@ -182,6 +182,8 @@ public class PriorityQueue {
 	 */
 	private int percolateUp(int start_index) {
 		// TODO: Fill in
+		new UnsupportedOperationException("percolateUp not yet implemented.");
+		return -1;
 	}
 
 
