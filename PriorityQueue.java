@@ -81,6 +81,7 @@ public class PriorityQueue {
 	 *	</ul>
 	 */
 	public int topElement() {
+		// TODO: Fill in
 		new UnsupportedOperationException("topElement not yet implemented.");
 		return -1;
 	}
