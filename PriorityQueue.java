@@ -50,7 +50,7 @@ public class PriorityQueue {
 
 		// add new element to the end of the array
 		this.location.put(element, this.heap.size());
-		this.heap.add(new Pair<int, int>(priority, element));
+		this.heap.add(new Pair<Integer, Integer>(priority, element));
 
 		// TODO add percolate up
 		new UnsupportedOperationException("push not yet implemented.");
