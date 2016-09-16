@@ -280,7 +280,7 @@ public class PriorityQueue {
 	 * @return true if element in heap has two children
 	 */
 	private boolean hasTwoChildren(int i) {
-		// TODO: Fill in
+		return this.right(i) < this.size();
 	}
 
 	/**
