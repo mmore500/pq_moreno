@@ -171,6 +171,8 @@ public class PriorityQueue {
 	 */
 	private int pushDown(int start_index) {
 		// TODO: Fill in
+		new UnsupportedOperationException("pushDown not yet implemented.");
+		return -1;
 	}
 
 	/**
