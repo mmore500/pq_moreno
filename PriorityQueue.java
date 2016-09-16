@@ -51,7 +51,7 @@ public class PriorityQueue {
 		}
 
 		// add new element to the end of the array
-		this.map.put(element, this.heap.size());
+		this.location.put(element, this.heap.size());
 		this.heap.add(new Pair<int, int>(priority, element));
 
 		// TODO add percolate up
