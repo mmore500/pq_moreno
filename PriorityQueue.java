@@ -222,7 +222,7 @@ public class PriorityQueue {
 	 */
 
 	private int parent(int child) {
-		// TODO: Fill in
+		return Math.floor((child - 1)/2);
 	}
 
 
