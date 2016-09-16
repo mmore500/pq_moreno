@@ -236,7 +236,7 @@ public class PriorityQueue {
 	 */
 
 	private int parent(int child) {
-		return Math.floor((child - 1)/2);
+		return (child - 1)/2;
 	}
 
 
