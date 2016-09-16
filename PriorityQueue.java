@@ -39,7 +39,23 @@ public class PriorityQueue {
 	 *
 	 */
 	public void push(int priority, int element) {
-		// TODO: Fill in
+		for(int i: this.heap) {
+			// check that element does not already appear in priority queue
+			if (this.heap.get(i).element == element) {
+				new AssertionError("Attempted to add an element that already appears in the priority queue.");
+			}
+			// check that prioririty is non-negtive
+			if (this.heap.get(i).priority < 0) {
+				new AssertionError("Attempted to add an element with negative priority.");
+			}
+		}
+
+		// add new element to the end of the array
+		this.map.put(element, this.heap.size());
+		this.heap.add(new Pair<int, int>(priority, element));
+
+		// TODO add percolate up
+		new UnsupportedOperationException("push not yet implemented.");
 	}
 
 	/**
