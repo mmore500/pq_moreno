@@ -32,4 +32,20 @@ public class PriorityQueueTest {
     q.push(12, 100);
   }
 
+  @Test
+  public void leftTest() {
+    assertEquals(PriorityQueue.left(0), 1);
+    assertEquals(PriorityQueue.left(1), 3);
+    assertEquals(PriorityQueue.left(2), 5);
+    assertEquals(PriorityQueue.left(3), 7);
+  }
+
+  @Test
+  public void rightTest() {
+    assertEquals(PriorityQueue.right(0), 2);
+    assertEquals(PriorityQueue.right(1), 4);
+    assertEquals(PriorityQueue.right(2), 6);
+    assertEquals(PriorityQueue.right(3), 8);
+  }
+
 }
