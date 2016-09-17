@@ -14,7 +14,7 @@ public class Pair<P, E> {
 	}
 
 	public String toString() {
-		return "(priority: " + this.priority + ", element: " + this.element + ")";
+		return "(p: " + this.priority + ", e: " + this.element + ")";
 	}
 
 }
