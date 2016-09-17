@@ -149,9 +149,7 @@ public class PriorityQueue {
 	 *  @return true if the element exists, false otherwise
 	 */
 	public boolean isPresent(int element) {
-		// TODO: Fill in
-		new UnsupportedOperationException("isPresent not yet implemented.");
-		return false;
+		return this.location.containsKey(element);
 	}
 
 	/**
