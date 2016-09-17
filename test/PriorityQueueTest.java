@@ -48,4 +48,19 @@ public class PriorityQueueTest {
     assertEquals(PriorityQueue.right(3), 8);
   }
 
+  @Test
+  public void compareTest() {
+    // check our assertion against equal priority
+    try {
+      PriorityQueue.compare(4,4);
+    } catch (AssertionError expectedException) {
+    }
+
+    // make sure that ordering is consistent
+    assert(PriorityQueue.compare(12, 5) != PriorityQueue.compare(5, 12));
+
+    // ensure that we specifically have the max heap property
+    assert(PriorityQueue.compare(12, 5));
+  }
+
 }
