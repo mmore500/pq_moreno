@@ -283,18 +283,65 @@ public class PriorityQueue {
 		return this.right(i) < this.size();
 	}
 
+	private boolean hasLeft(int parent) {
+		return !this.isLeaf(parent);
+	}
+
+	private boolean hasRight(int parent) {
+		return this.hasTwoChildren(parent);
+	}
+
+	private int getLeft(int parent) {
+		return this.heap.get(this.left(parent)).element;
+	}
+
+	private int getRight(int parent) {
+		return this.heap.get(this.right(parent)).element;
+	}
+
+	/**
+	 * Return a representation of the heap as a list
+	 */
+	public String toString() {
+		return this.heap.toString();
+	}
+
+
 	/**
 	 * Print the underlying list representation
 	 */
 	private void printHeap() {
-		// TODO: Fill in
+		System.out.print(this.toString());
+	}
+
+	/**
+	 * Print the heap as a tree
+	 */
+	private void printHeapTree() {
+		System.out.print(this.treeString());
+	}
+
+	// inspired by http://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
+	public String treeString() {
+	    return this.printHeapTree(0, new StringBuilder(), true, new StringBuilder()).toString();
+	}
+
+	public StringBuilder printHeapTree(int curNode, StringBuilder prefix, boolean isTail, StringBuilder sb) {
+	    if(this.hasRight(curNode)) {
+	        this.printHeapTree(this.right(curNode), new StringBuilder().append(prefix).append(isTail ? "│   " : "    "), false, sb);
+	    }
+	    sb.append(prefix).append(isTail ? "└── " : "┌── ").append(this.heap.get(curNode)).append("\n");
+	    if(this.hasLeft(curNode)) {
+	        this.printHeapTree(this.left(curNode), new StringBuilder().append(prefix).append(isTail ? "    " : "│   "), true, sb);
+	    }
+	    return sb;
 	}
 
 	/**
 	 * Print the entries in the location map
 	 */
 	private void printMap() {
-		// TODO: Fill in
+		System.out.print(this.location.toString());
 	}
 
 
