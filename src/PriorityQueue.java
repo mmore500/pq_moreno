@@ -370,13 +370,13 @@ public class PriorityQueue {
 	    return this.printHeapTree(0, new StringBuilder(), true, new StringBuilder()).toString();
 	}
 
-	private StringBuilder printHeapTree(int curNode, StringBuilder prefix, boolean isTail, StringBuilder sb) {
+	private StringBuilder treeString(int curNode, StringBuilder prefix, boolean isTail, StringBuilder sb) {
 	    if(this.hasRight(curNode)) {
-	        this.printHeapTree(this.right(curNode), new StringBuilder().append(prefix).append(isTail ? "│   " : "    "), false, sb);
+	        this.treeString(this.right(curNode), new StringBuilder().append(prefix).append(isTail ? "│   " : "    "), false, sb);
 	    }
 	    sb.append(prefix).append(isTail ? "└── " : "┌── ").append(this.heap.get(curNode)).append("\n");
 	    if(this.hasLeft(curNode)) {
-	        this.printHeapTree(this.left(curNode), new StringBuilder().append(prefix).append(isTail ? "    " : "│   "), true, sb);
+	        this.treeString(this.left(curNode), new StringBuilder().append(prefix).append(isTail ? "    " : "│   "), true, sb);
 	    }
 	    return sb;
 	}
