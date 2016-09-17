@@ -354,14 +354,14 @@ public class PriorityQueue {
 	/**
 	 * Print the underlying list representation
 	 */
-	private void printHeap() {
+	protected void printHeap() {
 		System.out.print(this.toString());
 	}
 
 	/**
 	 * Print the heap as a tree
 	 */
-	private void printHeapTree() {
+	protected void printHeapTree() {
 		System.out.print(this.treeString());
 	}
 
