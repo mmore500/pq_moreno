@@ -108,4 +108,25 @@ public class PriorityQueueTest {
     assertEquals(q.topPriority(), 6);
   }
 
+  @Test
+  public void topElementTest() {
+    PriorityQueue q = new PriorityQueue();
+
+    // check our assertion against non-empty heap
+    try {
+      q.topElement();
+      fail("accessing the top element in an empty queue didn't raise an AssertionError" );
+    } catch (AssertionError expectedException){
+    }
+
+    q.push(5, 12);
+    assertEquals(q.topElement(), 12);
+
+    q.push(4, 17);
+    assertEquals(q.topElement(), 12);
+
+    q.push(6, 11);
+    assertEquals(q.topElement(), 11);
+  }
+
 }
