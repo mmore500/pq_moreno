@@ -204,7 +204,17 @@ public class PriorityQueue {
 	 * @param j element to be swapped
 	 */
 	private void swap(int i, int j) {
-		// TODO: Fill in
+		// perform the swap in the map
+		int old = this.location.replace(this.heap.get(i).element, j);
+		assert old == i;
+
+		old = this.location.replace(this.heap.get(j).element, i);
+		assert old == j;
+
+		// perform the swap in the heap
+		Pair swap = this.heap.get(i);
+		this.heap.set(i, this.heap.get(j));
+		this.heap.set(j, swap);
 	}
 
 	/**
