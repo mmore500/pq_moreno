@@ -191,9 +191,21 @@ public class PriorityQueue {
 	 * @return the index in the list where the element is finally stored
 	 */
 	private int percolateUp(int start_index) {
-		// TODO: Fill in
-		new UnsupportedOperationException("percolateUp not yet implemented.");
-		return -1;
+		// if we are at the top of the tree, we can't percolate up any further
+		if (start_index == 0) return 0;
+
+		int parent = PriorityQueue.parent(start_index);
+
+		// if we need to swap parent with cur node,
+		// handle this recursively
+		if(PriorityQueue.compare(this.heap.get(start_index).element, this.heap.get(parent).element)) {
+			this.swap(start_index, parent);
+			return this.percolateUp(start_index);
+		}
+		// otherwise, we are done percolating
+		 else {
+			return start_index;
+		}
 	}
 
 
