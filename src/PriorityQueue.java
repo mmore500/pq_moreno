@@ -294,9 +294,7 @@ public class PriorityQueue {
 	 * @return the index in the list where the element is finally stored
 	 */
 	private int percolateUpLeaf(){
-		// TODO: A one-line function that calls percolateUp()
-		new UnsupportedOperationException("percolateUpLeaf not yet implemented.");
-		return -1;
+		return this.percolateUp(this.size() - 1);
 	}
 
 	/**
