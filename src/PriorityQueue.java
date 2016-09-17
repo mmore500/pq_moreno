@@ -282,9 +282,7 @@ public class PriorityQueue {
 	 * @return the index in the list where the element is finally stored
 	 */
 	private int pushDownRoot() {
-		// TODO: A one-line function that calls pushDown()
-		new UnsupportedOperationException("pushDownRoot not yet implemented.");
-		return -1;
+		return this.pushDown(0);
 	}
 
 	/**
