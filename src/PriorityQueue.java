@@ -52,8 +52,8 @@ public class PriorityQueue {
 		this.location.put(element, this.heap.size());
 		this.heap.add(new Pair<Integer, Integer>(priority, element));
 
-		// TODO add percolate up
-		new UnsupportedOperationException("push not yet implemented.");
+		// ensure that max heap property satisfied
+		this.percolateUpLeaf();
 	}
 
 	/**
