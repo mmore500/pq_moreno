@@ -258,7 +258,7 @@ public class PriorityQueue {
 	 *	<li> The elements are not equivalent</li>
 	 * 	</ul>
 	 */
-	private static boolean compare(int el1, int el2) {
+	protected static boolean compare(int el1, int el2) {
 		if (el1 == el2) {
 			new AssertionError("Attempted compare two elements that are equivalent.");
 		}
