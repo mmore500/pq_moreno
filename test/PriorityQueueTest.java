@@ -67,6 +67,7 @@ public class PriorityQueueTest {
     // check our assertion against equal priority
     try {
       PriorityQueue.compare(4,4);
+      fail("comparing two equivalent elements didn't raise an AssertionError" );
     } catch (AssertionError expectedException) {
     }
 
