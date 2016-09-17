@@ -222,7 +222,7 @@ public class PriorityQueue {
 	 * @param parent index of element in list
 	 * @return index of element's left child in list
 	 */
-	private int left(int parent) {
+	protected static int left(int parent) {
 		return 2 * parent + 1;
 	}
 
@@ -231,7 +231,7 @@ public class PriorityQueue {
 	 * @param parent index of element in list
 	 * @return index of element's right child in list
 	 */
-	private int right(int parent) {
+	protected static int right(int parent) {
 		return 2 * parent + 2;
 	}
 
