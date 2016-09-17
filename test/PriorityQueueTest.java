@@ -33,6 +33,16 @@ public class PriorityQueueTest {
   }
 
   @Test
+  public void printHeapTreeTest() {
+    PriorityQueue q = new PriorityQueue();
+    q.push(0, 100);
+    q.push(12, 10);
+    q.push(15, 1);
+    q.push(8, 5);
+    q.printHeapTree();
+  }
+
+  @Test
   public void leftTest() {
     assertEquals(PriorityQueue.left(0), 1);
     assertEquals(PriorityQueue.left(1), 3);
