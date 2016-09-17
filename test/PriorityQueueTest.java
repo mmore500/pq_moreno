@@ -9,7 +9,7 @@ public class PriorityQueueTest {
   }
 
   @Test
-  public void pushTestPreconditions() {
+  public void pushPreconditionsTest() {
     PriorityQueue q = new PriorityQueue();
     // check preconditions are checked properly
     try {
