@@ -80,9 +80,13 @@ public class PriorityQueue {
 	 *	</ul>
 	 */
 	public int topPriority() {
-		// TODO: Fill in
-		new UnsupportedOperationException("topPriority not yet implemented.");
-		return -1;
+		// check precondition
+		if(this.size() == 0) {
+			new AssertionError("Attempted to get the top priority in an empty queue.");
+			return -1;
+		}
+		// if precondition is satisfied, the top priority element is the root
+		return this.heap.get(0).priority;
 	}
 
 
