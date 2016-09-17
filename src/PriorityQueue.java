@@ -200,7 +200,7 @@ public class PriorityQueue {
 		// handle this recursively
 		if(PriorityQueue.compare(this.heap.get(start_index).element, this.heap.get(parent).element)) {
 			this.swap(start_index, parent);
-			return this.percolateUp(start_index);
+			return this.percolateUp(parent);
 		}
 		// otherwise, we are done percolating
 		 else {
