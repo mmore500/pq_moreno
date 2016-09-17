@@ -250,6 +250,20 @@ public class PriorityQueue {
 	 * 	These are optional private methods that may be useful
 	 *********************************************************/
 
+	/**
+	 * Compare two elements, implemented to generate a max heap
+	 * @return true if el1 is ordered above el2
+	 * <dt><b>Preconditions:</b><dd>
+	 *	<ul>
+	 *	<li> The elements are not equivalent</li>
+	 * 	</ul>
+	 */
+	private static boolean compare(int el1, int el2) {
+		if (el1 == el2) {
+			new AssertionError("Attempted compare two elements that are equivalent.");
+		}
+		return el1 > el2;
+	}
 
 	/**
 	 * Push down the root element
