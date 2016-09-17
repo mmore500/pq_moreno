@@ -4,9 +4,25 @@ import static org.junit.Assert.*;
 public class PriorityQueueTest {
 
   @Test
-  public void testConstruction() {
-    PriorityQueue myQueue = new PriorityQueue();
-    assertEquals(true,true);
+  public void constructorTest() {
+    PriorityQueue q = new PriorityQueue();
+  }
+
+  @Test
+  public void pushTest() {
+    PriorityQueue q = new PriorityQueue();
+    // check preconditions are checked properly
+    try {
+      q.push(-1, 0);
+      fail("pushing an element with negative didn't raise an AssertionError" );
+    } catch (AssertionError expectedException) {
+    }
+    try {
+      q.push(0, 100);
+      q.push(12, 100);
+      fail("pushing an element alteady in the queue didn't raise an AssertionError" );
+    } catch (AssertionError expectedException) {
+    }
   }
 
 }
