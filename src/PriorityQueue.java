@@ -325,12 +325,12 @@ public class PriorityQueue {
 		return this.hasTwoChildren(parent);
 	}
 
-	private int getLeft(int parent) {
-		return this.heap.get(this.left(parent)).element;
+	private Pair getLeft(int parent) {
+		return this.heap.get(this.left(parent));
 	}
 
-	private int getRight(int parent) {
-		return this.heap.get(this.right(parent)).element;
+	private Pair getRight(int parent) {
+		return this.heap.get(this.right(parent));
 	}
 
 	/**
