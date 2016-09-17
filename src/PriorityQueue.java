@@ -366,11 +366,11 @@ public class PriorityQueue {
 	}
 
 	// inspired by http://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
-	public String treeString() {
+	private String treeString() {
 	    return this.printHeapTree(0, new StringBuilder(), true, new StringBuilder()).toString();
 	}
 
-	public StringBuilder printHeapTree(int curNode, StringBuilder prefix, boolean isTail, StringBuilder sb) {
+	private StringBuilder printHeapTree(int curNode, StringBuilder prefix, boolean isTail, StringBuilder sb) {
 	    if(this.hasRight(curNode)) {
 	        this.printHeapTree(this.right(curNode), new StringBuilder().append(prefix).append(isTail ? "│   " : "    "), false, sb);
 	    }
