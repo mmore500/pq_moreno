@@ -49,6 +49,20 @@ public class PriorityQueueTest {
   }
 
   @Test
+  public void parentTest() {
+    assertEquals(PriorityQueue.parent(1), 0);
+    assertEquals(PriorityQueue.parent(2), 0);
+    assertEquals(PriorityQueue.parent(3), 1);
+    assertEquals(PriorityQueue.parent(4), 1);
+    assertEquals(PriorityQueue.parent(5), 2);
+    assertEquals(PriorityQueue.parent(6), 2);
+    assertEquals(PriorityQueue.parent(7), 3);
+    assertEquals(PriorityQueue.parent(8), 3);
+    assertEquals(PriorityQueue.parent(9), 4);
+    assertEquals(PriorityQueue.parent(10), 4);
+  }
+
+  @Test
   public void compareTest() {
     // check our assertion against equal priority
     try {
