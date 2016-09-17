@@ -253,7 +253,7 @@ public class PriorityQueue {
 	 * @return index of element's parent in list
 	 */
 
-	private static int parent(int child) {
+	protected static int parent(int child) {
 		return (child - 1)/2;
 	}
 
