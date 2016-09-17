@@ -26,8 +26,10 @@ public class PriorityQueueTest {
   }
 
   @Test
-  public void pushTestPreconditions() {
-      PriorityQueue  q = new PriorityQueue();
+  public void pushTest() {
+    PriorityQueue q = new PriorityQueue();
+    q.push(0, 100);
+    q.push(12, 100);
   }
 
 }
