@@ -9,7 +9,7 @@ public class PriorityQueueTest {
   }
 
   @Test
-  public void pushTest() {
+  public void pushTestPreconditions() {
     PriorityQueue q = new PriorityQueue();
     // check preconditions are checked properly
     try {
@@ -23,6 +23,11 @@ public class PriorityQueueTest {
       fail("pushing an element alteady in the queue didn't raise an AssertionError" );
     } catch (AssertionError expectedException) {
     }
+  }
+
+  @Test
+  public void pushTestPreconditions() {
+      PriorityQueue  q = new PriorityQueue();
   }
 
 }
