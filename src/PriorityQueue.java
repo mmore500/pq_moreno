@@ -321,11 +321,11 @@ public class PriorityQueue {
 		return this.hasTwoChildren(parent);
 	}
 
-	private Pair getLeft(int parent) {
+	private Pair<Integer,Integer> getLeft(int parent) {
 		return this.heap.get(this.left(parent));
 	}
 
-	private Pair getRight(int parent) {
+	private Pair<Integer,Integer> getRight(int parent) {
 		return this.heap.get(this.right(parent));
 	}
 
