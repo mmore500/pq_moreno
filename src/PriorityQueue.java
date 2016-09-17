@@ -183,15 +183,15 @@ public class PriorityQueue {
 		// if we are at the top of the tree, we can't percolate up any further
 		if (this.isLeaf(start_index)) return start_index;
 
-		int leftVal = this.getLeft(start_index).element;
-		int rightVal = this.getRight(start_index).element;
-		int greatestChild = (PriorityQueue.compare(leftVal, rightVal) ? this.left(start_index) : this.right(start_index));
+		int leftPri = this.getLeft(start_index).priority;
+		int rightPri = this.getRight(start_index).priority;
+		int highestPriChild = (PriorityQueue.compare(leftPri, rightPri) ? this.left(start_index) : this.right(start_index));
 
 		// if we need to swap cur node with greatest child,
 		// handle this recursively
-		if(PriorityQueue.compare(this.heap.get(greatestChild).element, this.heap.get(start_index).element)) {
-			this.swap(start_index, greatestChild);
-			return this.pushDown(greatestChild);
+		if(PriorityQueue.compare(this.heap.get(highestPriChild).priority, this.heap.get(start_index).priority)) {
+			this.swap(start_index, highestPriChild);
+			return this.pushDown(highestPriChild);
 		}
 		// otherwise, we are done sinking
 		 else {
@@ -212,7 +212,7 @@ public class PriorityQueue {
 
 		// if we need to swap parent with cur node,
 		// handle this recursively
-		if(PriorityQueue.compare(this.heap.get(start_index).element, this.heap.get(parent).element)) {
+		if(PriorityQueue.compare(this.heap.get(start_index).priority, this.heap.get(parent).priority)) {
 			this.swap(start_index, parent);
 			return this.percolateUp(parent);
 		}
