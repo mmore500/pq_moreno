@@ -322,7 +322,7 @@ public class PriorityQueue {
 	 * @param i index of element in heap
 	 * @return true if element is a leaf
 	 */
-	private boolean isLeaf(int i){
+	protected boolean isLeaf(int i){
 		return this.left(i) >= this.size();
 	}
 
