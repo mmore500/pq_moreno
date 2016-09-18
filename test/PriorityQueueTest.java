@@ -264,5 +264,12 @@ public class PriorityQueueTest {
     assertEquals(q.getPriority(14), 5);
   }
 
+  @Test
+  public void isEmptyTest() {
+    PriorityQueue q = new PriorityQueue();
+    assertTrue(q.isEmpty());
+    q.push(1,1);
+    assertFalse(q.isEmpty());
+  }
 
 }
