@@ -373,11 +373,18 @@ public class PriorityQueue {
 		System.out.print(this.treeString());
 	}
 
-	// inspired by http://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
+	/**
+	 * Generate a pretty-printed tree diagram
+	 * Adapted from http://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
+	 */
 	private String treeString() {
 	    return this.treeString(0, new StringBuilder(), true, new StringBuilder()).toString();
 	}
 
+	/**
+	 * Recursive backend for pretty-printed tree diagram
+	 * Adapted from http://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
+	 */
 	private StringBuilder treeString(int curNode, StringBuilder prefix, boolean isTail, StringBuilder sb) {
 	    if(this.hasRight(curNode)) {
 	        this.treeString(this.right(curNode), new StringBuilder().append(prefix).append(isTail ? "│   " : "    "), false, sb);
