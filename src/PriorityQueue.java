@@ -13,8 +13,8 @@ import java.util.Map;
  */
 public class PriorityQueue {
 
-	private Map<Integer, Integer> location;
-	private List<Pair<Integer, Integer>> heap;
+	protected Map<Integer, Integer> location;
+	protected List<Pair<Integer, Integer>> heap;
 
 	/**
 	 *  Constructs an empty priority queue
