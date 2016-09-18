@@ -335,10 +335,16 @@ public class PriorityQueue {
 		return this.right(i) < this.size();
 	}
 
+	/**
+	 * Determine if the left child for an index is in the tree
+	 */
 	private boolean hasLeft(int parent) {
 		return !this.isLeaf(parent);
 	}
 
+	/**
+	 * Determine if the right child for an index is in the tree
+	 */
 	private boolean hasRight(int parent) {
 		return this.hasTwoChildren(parent);
 	}
