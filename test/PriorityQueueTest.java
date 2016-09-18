@@ -152,4 +152,36 @@ public class PriorityQueueTest {
     assertTrue(q.isLeaf(3));
   }
 
+  @Test
+  public void hasTwoChildrenTest() {
+    PriorityQueue q = new PriorityQueue();
+
+    q.push(5, 12);
+    assertTrue(!q.hasTwoChildren(0));
+
+    q.push(4, 17);
+    assertTrue(!q.hasTwoChildren(0));
+    assertTrue(!q.hasTwoChildren(1));
+
+    q.push(6, 11);
+    assertTrue(q.hasTwoChildren(0));
+    assertTrue(!q.hasTwoChildren(1));
+    assertTrue(!q.hasTwoChildren(2));
+
+    q.push(12, 10);
+    assertTrue(q.hasTwoChildren(0));
+    assertTrue(!q.hasTwoChildren(1));
+    assertTrue(!q.hasTwoChildren(2));
+    assertTrue(!q.hasTwoChildren(3));
+
+    q.push(12, 13);
+    assertTrue(q.hasTwoChildren(0));
+    assertTrue(q.hasTwoChildren(1));
+    assertTrue(!q.hasTwoChildren(2));
+    assertTrue(!q.hasTwoChildren(3));
+    assertTrue(!q.hasTwoChildren(4));
+  }
+
+
+
 }
