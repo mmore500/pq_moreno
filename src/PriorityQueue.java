@@ -205,7 +205,8 @@ public class PriorityQueue {
 	 *  Removes all elements from the priority queue
 	 */
 	public void clear() {
-		// TODO: Fill in
+		this.heap.clear();
+		this.location.clear();
 	}
 
 	/**

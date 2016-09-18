@@ -340,5 +340,25 @@ public class PriorityQueueTest {
 
   }
 
+  @Test
+  public void clearTest() {
+    PriorityQueue q = new PriorityQueue();
+
+    assertEquals(q.size(), 0);
+    q.clear();
+    assertEquals(q.size(), 0);
+    q.push(5, 12);
+    q.push(4, 17);
+    assertEquals(q.size(), 2);
+    q.clear();
+    assertEquals(q.size(), 0);
+    q.push(6, 11);
+    q.push(12, 10);
+    q.push(1, 14);
+    assertEquals(q.size(), 3);
+    q.clear();
+    assertEquals(q.size(), 0);
+  }
+
 
 }
