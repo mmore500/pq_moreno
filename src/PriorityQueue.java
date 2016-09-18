@@ -137,6 +137,13 @@ public class PriorityQueue {
 		}
 
 		this.heap.get(index).priority = newpriority;
+
+		// adjust position of element in queue to match new priority
+		// if percolating up doesn't do anything, then we might need
+		// to push down
+		if (this.percolateUp(index) == index) {
+			this.pushDown(index);
+		}
 	}
 
 
