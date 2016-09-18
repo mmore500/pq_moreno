@@ -120,12 +120,18 @@ public class PriorityQueue {
 	 *	<dt><b>Preconditions:</b><dd>
 	 *	<ul>
 	 *	<li> The element exists in the priority queue</li>
+	 *  <li> The assigned priority is non-negative</li>
 	 *	</ul>
 	 */
 	public void changePriority(int element, int newpriority) {
 		Integer index = this.location.get(element);
 
-		// check precondition
+		// check precondition of non-negativity
+		if(newpriority < 0) {
+			new AssertionError("Attempted to set a negative priority");
+		}
+
+		// check precondition of existance
 		if(index == null) {
 			new AssertionError("Attempted to set the priority of element not in queue.");
 		}
