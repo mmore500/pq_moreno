@@ -59,6 +59,8 @@ public class PriorityQueue {
 	/**
 	 *  Remove the highest priority element
 	 *
+	 *	@return the element returned from the PriorityQueue
+	 *
 	 *	<dt><b>Preconditions:</b><dd>
 	 *	<ul>
 	 *	<li> The priority queue is non-empty.</li>
