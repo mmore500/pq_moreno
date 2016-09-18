@@ -182,6 +182,67 @@ public class PriorityQueueTest {
     assertTrue(!q.hasTwoChildren(4));
   }
 
+  @Test
+  public void hasLeftTest() {
+    PriorityQueue q = new PriorityQueue();
+
+    q.push(5, 12);
+    assertTrue(!q.hasLeft(0));
+
+    q.push(4, 17);
+    assertTrue(q.hasLeft(0));
+    assertTrue(!q.hasLeft(1));
+
+    q.push(6, 11);
+    assertTrue(q.hasLeft(0));
+    assertTrue(!q.hasLeft(1));
+    assertTrue(!q.hasLeft(2));
+
+    q.push(12, 10);
+    assertTrue(q.hasLeft(0));
+    assertTrue(q.hasLeft(1));
+    assertTrue(!q.hasLeft(2));
+    assertTrue(!q.hasLeft(3));
+
+    q.push(12, 13);
+    assertTrue(q.hasLeft(0));
+    assertTrue(q.hasLeft(1));
+    assertTrue(!q.hasLeft(2));
+    assertTrue(!q.hasLeft(3));
+    assertTrue(!q.hasLeft(4));
+  }
+
+  @Test
+  public void hasRightTest() {
+    PriorityQueue q = new PriorityQueue();
+
+    q.push(5, 12);
+    assertTrue(!q.hasRight(0));
+
+    q.push(4, 17);
+    assertTrue(!q.hasRight(0));
+    assertTrue(!q.hasRight(1));
+
+    q.push(6, 11);
+    assertTrue(q.hasRight(0));
+    assertTrue(!q.hasRight(1));
+    assertTrue(!q.hasRight(2));
+
+    q.push(12, 10);
+    assertTrue(q.hasRight(0));
+    assertTrue(!q.hasRight(1));
+    assertTrue(!q.hasRight(2));
+    assertTrue(!q.hasRight(3));
+
+    q.push(12, 13);
+    assertTrue(q.hasRight(0));
+    assertTrue(q.hasRight(1));
+    assertTrue(!q.hasRight(2));
+    assertTrue(!q.hasRight(3));
+    assertTrue(!q.hasRight(4));
+  }
+
+
 
 
 }
