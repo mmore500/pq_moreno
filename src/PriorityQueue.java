@@ -139,9 +139,15 @@ public class PriorityQueue {
 	 *	</ul>
 	 */
 	public int getPriority(int element) {
-		// TODO: Fill in
-		new UnsupportedOperationException("getPriority not yet implemented.");
-		return -1;
+		Integer index = this.location.get(element);
+
+		// check precondition
+		if(index == null) {
+			new AssertionError("Attempted to get the priority of element not in queue.");
+			return -1;
+		}
+
+		return this.heap.get(index).priority;
 	}
 
 	/**

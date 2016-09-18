@@ -242,7 +242,28 @@ public class PriorityQueueTest {
     assertTrue(!q.hasRight(4));
   }
 
+  @Test
+  public void getPriorityTest() {
+    PriorityQueue q = new PriorityQueue();
+    q.push(5, 12);
+    q.push(4, 17);
+    q.push(6, 11);
+    q.push(12, 10);
+    q.push(5, 14);
 
+    // check precondition
+    try {
+      q.getPriority(5);
+      fail("accessing a nonexistant element in a queue didn't raise an AssertionError" );
+    } catch (AssertionError expectedException){
+    }
+    System.out.print(q.getPriority(12));
+    assertEquals(q.getPriority(12), 5);
+    assertEquals(q.getPriority(17), 4);
+    assertEquals(q.getPriority(11), 6);
+    assertEquals(q.getPriority(10), 12);
+    assertEquals(q.getPriority(14), 5);
+  }
 
 
 }
