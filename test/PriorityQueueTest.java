@@ -425,4 +425,43 @@ public class PriorityQueueTest {
     assertFalse(PriorityQueue.isProperHeap(list));
   }
 
+  @Test
+  public void functionalityTest() {
+    // the idea is to throw everything and the kitchen sink at our
+    // heap and ensure that it maintains proper heap ordering
+    PriorityQueue q = new PriorityQueue();
+
+    assertTrue(q.isProperHeap());
+    q.push(12,10);
+    assertTrue(q.isProperHeap());
+    q.push(12, 11);
+    assertTrue(q.isProperHeap());
+    q.push(14, 9);
+    assertTrue(q.isProperHeap());
+    q.push(100, 22);
+    assertTrue(q.isProperHeap());
+    q.push(1, 47);
+    assertTrue(q.isProperHeap());
+    q.push(4, 1);
+    assertTrue(q.isProperHeap());
+
+    assertEquals(q.pop(), 22);
+    assertTrue(q.isProperHeap());
+
+    assertEquals(q.pop(), 9);
+    assertTrue(q.isProperHeap());
+
+    q.changePriority(11, 15);
+    assertTrue(q.isProperHeap());
+
+    q.changePriority(1, 13);
+    assertTrue(q.isProperHeap());
+
+    q.clear();
+    assertTrue(q.isProperHeap());
+
+    q.push(11,100);
+    assertTrue(q.isProperHeap());
+  }
+
 }
