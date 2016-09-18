@@ -349,10 +349,16 @@ public class PriorityQueue {
 		return this.hasTwoChildren(parent);
 	}
 
+	/**
+	 * Return the left child Pair of an index in the tree
+	 */
 	private Pair<Integer,Integer> getLeft(int parent) {
 		return this.heap.get(this.left(parent));
 	}
 
+	/**
+	 * Return the right child Pair of an index in the tree
+	 */
 	private Pair<Integer,Integer> getRight(int parent) {
 		return this.heap.get(this.right(parent));
 	}
