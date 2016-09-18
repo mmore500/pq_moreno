@@ -310,13 +310,13 @@ public class Moreno_PriorityQueueTest {
   }
 
   @Test
-  public void popTest() {
+  public void popvalTest() {
     PriorityQueue q = new PriorityQueue();
 
     // check non-empty precondition
     try {
-      q.pop();
-      fail("popping out of an empty list didn't raise an AssertionError" );
+      q.popval();
+      fail("popvalping out of an empty list didn't raise an AssertionError" );
     } catch (AssertionError expectedException){
     }
 
@@ -326,18 +326,18 @@ public class Moreno_PriorityQueueTest {
     q.push(12, 10);
     q.push(1, 14);
 
-    // make sure that elements are popped out
+    // make sure that elements are popvalped out
     // lowest to highest priority
     assertEquals(q.size(), 5);
-    assertEquals(q.pop(), 10);
+    assertEquals(q.popval(), 10);
     assertEquals(q.size(), 4);
-    assertEquals(q.pop(), 11);
+    assertEquals(q.popval(), 11);
     assertEquals(q.size(), 3);
-    assertEquals(q.pop(), 12);
+    assertEquals(q.popval(), 12);
     assertEquals(q.size(), 2);
-    assertEquals(q.pop(), 17);
+    assertEquals(q.popval(), 17);
     assertEquals(q.size(), 1);
-    assertEquals(q.pop(), 14);
+    assertEquals(q.popval(), 14);
     assertEquals(q.size(), 0);
 
   }
@@ -445,10 +445,10 @@ public class Moreno_PriorityQueueTest {
     q.push(4, 1);
     assertTrue(q.isProperHeap());
 
-    assertEquals(q.pop(), 22);
+    assertEquals(q.popval(), 22);
     assertTrue(q.isProperHeap());
 
-    assertEquals(q.pop(), 9);
+    assertEquals(q.popval(), 9);
     assertTrue(q.isProperHeap());
 
     q.changePriority(11, 15);

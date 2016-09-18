@@ -57,6 +57,19 @@ public class PriorityQueue {
 	/**
 	 *  Remove the highest priority element
 	 *
+	 *	<dt><b>Preconditions:</b><dd>
+	 *	<ul>
+	 *	<li> The priority queue is non-empty.</li>
+	 *	</ul>
+	 *
+	 */
+	public void pop(){
+		this.popval();
+	}
+
+	/**
+	 *  Remove and return the highest priority element
+	 *
 	 *	@return the element returned from the PriorityQueue
 	 *
 	 *	<dt><b>Preconditions:</b><dd>
@@ -65,7 +78,7 @@ public class PriorityQueue {
 	 *	</ul>
 	 *
 	 */
-	public int pop(){
+	public int popval(){
 
 		assert this.size() > 0: "Attempted to pop out of an empty list.";
 
@@ -79,6 +92,7 @@ public class PriorityQueue {
 		if(this.size() > 0) this.pushDownRoot();
 		return elem_removed;
 	}
+
 
 
 	/**
