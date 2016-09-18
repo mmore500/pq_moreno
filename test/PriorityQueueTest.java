@@ -257,7 +257,6 @@ public class PriorityQueueTest {
       fail("accessing a nonexistant element in a queue didn't raise an AssertionError" );
     } catch (AssertionError expectedException){
     }
-    System.out.print(q.getPriority(12));
     assertEquals(q.getPriority(12), 5);
     assertEquals(q.getPriority(17), 4);
     assertEquals(q.getPriority(11), 6);
