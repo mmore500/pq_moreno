@@ -343,6 +343,38 @@ public class Moreno_PriorityQueueTest {
   }
 
   @Test
+  public void popTest() {
+    PriorityQueue q = new PriorityQueue();
+
+    // check non-empty precondition
+    try {
+      q.pop();
+      fail("popping out of an empty list didn't raise an AssertionError" );
+    } catch (AssertionError expectedException){
+    }
+
+    q.push(5, 12);
+    q.push(4, 17);
+    q.push(6, 11);
+    q.push(12, 10);
+    q.push(1, 14);
+
+    // make sure that elements are popped out
+    assertEquals(q.size(), 5);
+    q.pop();
+    assertEquals(q.size(), 4);
+    q.pop();
+    assertEquals(q.size(), 3);
+    q.pop();
+    assertEquals(q.size(), 2);
+    q.pop();
+    assertEquals(q.size(), 1);
+    q.pop();
+    assertEquals(q.size(), 0);
+
+  }
+
+  @Test
   public void clearTest() {
     PriorityQueue q = new PriorityQueue();
 
