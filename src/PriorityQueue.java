@@ -123,7 +123,14 @@ public class PriorityQueue {
 	 *	</ul>
 	 */
 	public void changePriority(int element, int newpriority) {
-		// TODO: Fill in
+		Integer index = this.location.get(element);
+
+		// check precondition
+		if(index == null) {
+			new AssertionError("Attempted to set the priority of element not in queue.");
+		}
+
+		this.heap.get(index).priority = newpriority;
 	}
 
 
