@@ -338,14 +338,14 @@ public class PriorityQueue {
 	/**
 	 * Determine if the left child for an index is in the tree
 	 */
-	private boolean hasLeft(int parent) {
+	protected boolean hasLeft(int parent) {
 		return !this.isLeaf(parent);
 	}
 
 	/**
 	 * Determine if the right child for an index is in the tree
 	 */
-	private boolean hasRight(int parent) {
+	protected boolean hasRight(int parent) {
 		return this.hasTwoChildren(parent);
 	}
 
