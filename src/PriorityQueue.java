@@ -40,13 +40,11 @@ public class PriorityQueue {
 	 */
 	public void push(int priority, int element) {
 		// check that element does not already appear in priority queue
-		if (this.location.containsKey(element)) {
-			new AssertionError("Attempted to add an element that already appears in the priority queue.");
-		}
+
+		assert !this.location.containsKey(element): "Attempted to add an element that already appears in the priority queue.";
+
 		// check that prioririty is non-negtive
-		if (priority < 0) {
-			new AssertionError("Attempted to add an element with negative priority.");
-		}
+		assert priority >= 0: "Attempted to add an element with negative priority.";
 
 		// add new element to the end of the array
 		this.location.put(element, this.heap.size());
@@ -68,10 +66,8 @@ public class PriorityQueue {
 	 *
 	 */
 	public int pop(){
-		if(this.size() <= 0) {
-			new AssertionError("Attempted to pop out of an empty list.");
-			return -1;
-		}
+
+		assert this.size() > 0: "Attempted to pop out of an empty list.";
 
 		this.swap(0,this.size() - 1);
 
@@ -96,10 +92,8 @@ public class PriorityQueue {
 	 */
 	public int topPriority() {
 		// check precondition
-		if(this.size() == 0) {
-			new AssertionError("Attempted to get the top priority in an empty queue.");
-			return -1;
-		}
+		assert this.size() > 0: "Attempted to get the top priority in an empty queue.";
+
 		// if precondition is satisfied, the top priority element is the root
 		return this.heap.get(0).priority;
 	}
@@ -116,10 +110,8 @@ public class PriorityQueue {
 	 */
 	public int topElement() {
 		// check precondition
-		if(this.size() == 0) {
-			new AssertionError("Attempted to get the top element in an empty queue.");
-			return -1;
-		}
+		assert this.size() > 0: "Attempted to get the top element in an empty queue.";
+
 		// if precondition is satisfied, the top priority element is the root
 		return this.heap.get(0).element;
 	}
@@ -142,16 +134,10 @@ public class PriorityQueue {
 		Integer index = this.location.get(element);
 
 		// check precondition of non-negativity
-		if(newpriority < 0) {
-			new AssertionError("Attempted to set a negative priority");
-			return;
-		}
+		assert newpriority >= 0: "Attempted to set a negative priority";
 
 		// check precondition of existance
-		if(index == null) {
-			new AssertionError("Attempted to set the priority of element not in queue.");
-			return;
-		}
+		assert index != null: "Attempted to set the priority of element not in queue.";
 
 		this.heap.get(index).priority = newpriority;
 
@@ -178,11 +164,7 @@ public class PriorityQueue {
 	public int getPriority(int element) {
 		Integer index = this.location.get(element);
 
-		// check precondition
-		if(index == null) {
-			new AssertionError("Attempted to get the priority of element not in queue.");
-			return -1;
-		}
+		assert index != null: "Attempted to get the priority of element not in queue.";
 
 		return this.heap.get(index).priority;
 	}
