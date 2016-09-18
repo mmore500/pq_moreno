@@ -339,17 +339,10 @@ public class PriorityQueue {
 
 	/**
 	 * Compare two elements, implemented to generate a max heap
-	 * @return true if el1 is ordered above el2
-	 * <dt><b>Preconditions:</b><dd>
-	 *	<ul>
-	 *	<li> The elements are not equivalent</li>
-	 * 	</ul>
+	 * @return true if el1 is ordered above or equal to el2
 	 */
 	protected static boolean compare(int el1, int el2) {
-		if (el1 == el2) {
-			new AssertionError("Attempted compare two elements that are equivalent.");
-		}
-		return el1 > el2;
+		return el1 >= el2;
 	}
 
 	/**
