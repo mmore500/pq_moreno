@@ -129,4 +129,27 @@ public class PriorityQueueTest {
     assertEquals(q.topElement(), 11);
   }
 
+  @Test
+  public void isLeafTest() {
+    PriorityQueue q = new PriorityQueue();
+
+    q.push(5, 12);
+    assertTrue(q.isLeaf(0));
+
+    q.push(4, 17);
+    assertTrue(!q.isLeaf(0));
+    assertTrue(q.isLeaf(1));
+
+    q.push(6, 11);
+    assertTrue(!q.isLeaf(0));
+    assertTrue(q.isLeaf(1));
+    assertTrue(q.isLeaf(2));
+
+    q.push(12, 10);
+    assertTrue(!q.isLeaf(0));
+    assertTrue(!q.isLeaf(1));
+    assertTrue(q.isLeaf(2));
+    assertTrue(q.isLeaf(3));
+  }
+
 }
