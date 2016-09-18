@@ -466,5 +466,55 @@ public class PriorityQueue {
 		System.out.print(this.location.toString());
 	}
 
+	/**
+	 * Returns true if the heap satisfies the ordering
+	 * set out in the method compare
+	 */
+	protected boolean isProperHeap() {
+		return PriorityQueue.isProperHeap(this.heap);
+	}
+
+	/**
+	 * Tests an List<Pair<Integer, Integer>> for proper heap ordering,
+	 * implemented to expose the ordering check to unit testing
+	 */
+	protected static boolean isProperHeap(List<Pair<Integer, Integer>> heaplist) {
+		if (heaplist.size() == 0) {
+			return true;
+		}
+		else {
+			return nodeGreaterThanChildren(heaplist, 0);
+		}
+	}
+
+	/**
+	 * Recursively tests for proper heap ordering
+	 */
+	private static boolean nodeGreaterThanChildren(List<Pair<Integer, Integer>> heaplist, int node) {
+		// if no left child then we have a leaf so skip
+		// and return true
+		if (heaplist.size() > PriorityQueue.left(node)) {
+			if (!PriorityQueue.compare(heaplist.get(node).priority, heaplist.get(PriorityQueue.left(node)).priority)) {
+				return false;
+			}
+			//recursive check of left progeny
+			else if (!nodeGreaterThanChildren(heaplist, PriorityQueue.left(node))) {
+				return false;
+			}
+
+			// if left child passes and no right child then skip
+			// and return true
+			if (heaplist.size() > PriorityQueue.right(node)) {
+				if (!PriorityQueue.compare(heaplist.get(node).priority,  heaplist.get(PriorityQueue.right(node)).priority)) {
+					return false;
+				}
+				// recursive check of right progeny
+				else if (!nodeGreaterThanChildren(heaplist, PriorityQueue.right(node))) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 
 }

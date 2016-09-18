@@ -1,5 +1,7 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.util.List;
+import java.util.ArrayList;
 
 public class PriorityQueueTest {
 
@@ -360,5 +362,67 @@ public class PriorityQueueTest {
     assertEquals(q.size(), 0);
   }
 
+
+  @Test
+  public void isProperHeapTest() {
+    List<Pair<Integer, Integer>> list = new ArrayList();
+
+    list.add(new Pair(10, 1));
+    list.add(new Pair(9, 2));
+    list.add(new Pair(8, 3));
+    list.add(new Pair(7, 4));
+    list.add(new Pair(6, 5));
+    list.add(new Pair(5, 6));
+    list.add(new Pair(4, 7));
+    list.add(new Pair(3, 8));
+    list.add(new Pair(2, 9));
+    list.add(new Pair(1, 10));
+
+    assertTrue(PriorityQueue.isProperHeap(list));
+
+    list.clear();
+
+    list.add(new Pair(100, 1));
+    list.add(new Pair(50, 2));
+    list.add(new Pair(40, 3));
+    list.add(new Pair(47, 4));
+    list.add(new Pair(2, 5));
+    list.add(new Pair(39, 6));
+    list.add(new Pair(7, 7));
+    list.add(new Pair(25, 8));
+    list.add(new Pair(25, 9));
+    list.add(new Pair(1, 10));
+    assertTrue(PriorityQueue.isProperHeap(list));
+
+    list.clear();
+
+    list.add(new Pair(100, 11));
+    list.add(new Pair(50, 2));
+    list.add(new Pair(40, 3));
+    list.add(new Pair(47, 4));
+    list.add(new Pair(2, 5));
+    list.add(new Pair(39, 6));
+    list.add(new Pair(7, 7));
+    list.add(new Pair(25, 8));
+    list.add(new Pair(25, 9));
+    list.add(new Pair(6, 10));
+
+    assertFalse(PriorityQueue.isProperHeap(list));
+
+    list.clear();
+
+    list.add(new Pair(100, 11));
+    list.add(new Pair(50, 2));
+    list.add(new Pair(40, 3));
+    list.add(new Pair(47, 4));
+    list.add(new Pair(2, 5));
+    list.add(new Pair(47, 6));
+    list.add(new Pair(7, 7));
+    list.add(new Pair(25, 8));
+    list.add(new Pair(25, 9));
+    list.add(new Pair(1, 10));
+
+    assertFalse(PriorityQueue.isProperHeap(list));
+  }
 
 }
