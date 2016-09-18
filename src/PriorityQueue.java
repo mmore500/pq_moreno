@@ -129,11 +129,13 @@ public class PriorityQueue {
 		// check precondition of non-negativity
 		if(newpriority < 0) {
 			new AssertionError("Attempted to set a negative priority");
+			return;
 		}
 
 		// check precondition of existance
 		if(index == null) {
 			new AssertionError("Attempted to set the priority of element not in queue.");
+			return;
 		}
 
 		this.heap.get(index).priority = newpriority;
