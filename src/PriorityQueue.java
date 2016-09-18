@@ -331,7 +331,7 @@ public class PriorityQueue {
 	 * @param i index of element in the heap
 	 * @return true if element in heap has two children
 	 */
-	private boolean hasTwoChildren(int i) {
+	protected boolean hasTwoChildren(int i) {
 		return this.right(i) < this.size();
 	}
 
