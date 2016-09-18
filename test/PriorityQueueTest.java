@@ -307,4 +307,38 @@ public class PriorityQueueTest {
     assertEquals(q.getPriority(14), 12);
   }
 
+  @Test
+  public void popTest() {
+    PriorityQueue q = new PriorityQueue();
+
+    // check non-empty precondition
+    try {
+      q.pop();
+      fail("popping out of an empty list didn't raise an AssertionError" );
+    } catch (AssertionError expectedException){
+    }
+
+    q.push(5, 12);
+    q.push(4, 17);
+    q.push(6, 11);
+    q.push(12, 10);
+    q.push(1, 14);
+
+    // make sure that elements are popped out
+    // lowest to highest priority
+    assertEquals(q.size(), 5);
+    assertEquals(q.pop(), 10);
+    assertEquals(q.size(), 4);
+    assertEquals(q.pop(), 11);
+    assertEquals(q.size(), 3);
+    assertEquals(q.pop(), 12);
+    assertEquals(q.size(), 2);
+    assertEquals(q.pop(), 17);
+    assertEquals(q.size(), 1);
+    assertEquals(q.pop(), 14);
+    assertEquals(q.size(), 0);
+
+  }
+
+
 }

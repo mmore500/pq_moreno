@@ -65,8 +65,21 @@ public class PriorityQueue {
 	 *	</ul>
 	 *
 	 */
-	public void pop(){
-		// TODO: Fill in
+	public int pop(){
+		if(this.size() <= 0) {
+			new AssertionError("Attempted to pop out of an empty list.");
+			return -1;
+		}
+
+		this.swap(0,this.size() - 1);
+
+		// remove old root from the end of the list
+		Integer elem_removed = this.heap.remove(this.size() - 1).element;
+		this.location.remove(elem_removed);
+
+		// sink down the new root if it still exists
+		if(this.size() > 0) this.pushDownRoot();
+		return elem_removed;
 	}
 
 
@@ -216,12 +229,21 @@ public class PriorityQueue {
 	 * @return the index in the list where the element is finally stored
 	 */
 	private int pushDown(int start_index) {
+		int highestPriChild;
+
 		// if we are at the top of the tree, we can't percolate up any further
 		if (this.isLeaf(start_index)) return start_index;
 
+		// if the node has only one child, it's the highest priority child
+		else if (!this.hasTwoChildren(start_index)) {
+			highestPriChild = this.left(start_index);
+		}
+
+		else {
 		int leftPri = this.getLeft(start_index).priority;
 		int rightPri = this.getRight(start_index).priority;
-		int highestPriChild = (PriorityQueue.compare(leftPri, rightPri) ? this.left(start_index) : this.right(start_index));
+		highestPriChild = (PriorityQueue.compare(leftPri, rightPri) ? this.left(start_index) : this.right(start_index));
+		}
 
 		// if we need to swap cur node with greatest child,
 		// handle this recursively
