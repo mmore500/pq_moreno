@@ -31,7 +31,7 @@ public class Moreno_PriorityQueueTest {
   public void pushTest() {
     PriorityQueue q = new PriorityQueue();
     q.push(0, 100);
-    q.push(12, 100);
+    q.push(12, 1);
   }
 
   @Test
