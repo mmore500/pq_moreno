@@ -281,10 +281,17 @@ public class PriorityQueueTest {
     q.push(12, 10);
     q.push(5, 14);
 
-    // check precondition
+    // check precondition of existence
     try {
       q.changePriority(5,100);
       fail("accessing a nonexistant element in a queue didn't raise an AssertionError" );
+    } catch (AssertionError expectedException){
+    }
+
+    // check precondition of non-negativity
+    try {
+      q.changePriority(12,-2);
+      fail("setting an element to a negative priority didn't raise an AssertionError" );
     } catch (AssertionError expectedException){
     }
 
