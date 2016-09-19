@@ -8,7 +8,7 @@ import java.util.Map;
  * Priorities cannot be negative.
  *
  * @author Matthew Moreno
- * @version September 16th, 2016
+ * @version September 18th, 2016
  *
  */
 public class PriorityQueue {
